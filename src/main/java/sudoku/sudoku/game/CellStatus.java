@@ -1,4 +1,4 @@
-package sudoku.sudoku;
+package sudoku.sudoku.game;
 
 public enum CellStatus 
 {

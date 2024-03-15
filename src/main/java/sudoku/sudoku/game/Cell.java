@@ -1,4 +1,4 @@
-package sudoku.sudoku;
+package sudoku.sudoku.game;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,13 +21,11 @@ public class Cell extends JTextField {
     public static final Color BG_WRONG_GUESS   = new Color(216, 0, 0);
     public static final Font FONT_NUMBERS = new Font("OCR A Extended", Font.PLAIN, 28);
 
-    // Variables
     int row, col;
     int number;
     int guessedNumber;
     CellStatus status;
 
-    // Constructor
     public Cell(int row, int col) {
         super();
         super.setHorizontalAlignment(JTextField.CENTER);
@@ -61,13 +59,6 @@ public class Cell extends JTextField {
 
     // Reset cell for API
     public void newGame(int number, boolean isGiven) {
-        this.number = number;
-        status = isGiven ? CellStatus.GIVEN : CellStatus.TO_GUESS;
-        paint();
-    }
-
-    // Reset cell for manual game
-    public void newManualGame(int number, boolean isGiven) {
         this.number = number;
         status = isGiven ? CellStatus.GIVEN : CellStatus.TO_GUESS;
         paint();

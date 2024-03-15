@@ -1,4 +1,4 @@
-package sudoku.sudoku;
+package sudoku.sudoku.game;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -8,14 +8,9 @@ import javax.swing.*;
 public class GameBoardPanel extends JPanel {
     @Serial
     private static final long serialVersionUID = 1L;
-    public static final int CELL_SIZE = 60;
-    public static final int BOARD_WIDTH  = CELL_SIZE * SudokuConstants.GRID_SIZE;
-    public static final int BOARD_HEIGHT = CELL_SIZE * SudokuConstants.GRID_SIZE;
 
-    // Game objects
-    private Cell[][] cells = new Cell[SudokuConstants.GRID_SIZE][SudokuConstants.GRID_SIZE];
+    private final Cell[][] cells = new Cell[SudokuConstants.GRID_SIZE][SudokuConstants.GRID_SIZE];
 
-    // Constructor
     public GameBoardPanel() {
         super.setLayout(new GridLayout(SudokuConstants.GRID_SIZE, SudokuConstants.GRID_SIZE));
 
@@ -37,7 +32,7 @@ public class GameBoardPanel extends JPanel {
             }
         }
 
-        super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
+        super.setPreferredSize(new Dimension(SudokuConstants.BOARD_WIDTH, SudokuConstants.BOARD_HEIGHT));
     }
 
     // Generate new puzzle and reset game board

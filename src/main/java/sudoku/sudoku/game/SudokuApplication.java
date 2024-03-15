@@ -1,4 +1,4 @@
-package sudoku.sudoku;
+package sudoku.sudoku.game;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -15,7 +15,6 @@ public class SudokuApplication extends JFrame {
 
 	@Serial
     private static final long serialVersionUID = 1L;
-
     public static GameBoardPanel board = new GameBoardPanel();
     JButton btnNewGame = new JButton("New Game");
 
@@ -26,11 +25,9 @@ public class SudokuApplication extends JFrame {
     // Constructor
     public SudokuApplication() {
         Container cp = getContentPane();
-
         cp.setLayout(new BorderLayout());
-
         cp.add(board, BorderLayout.CENTER);
-        //cp.add(btnNewGame, BorderLayout.SOUTH);
+        //cp.add(btnSolveGame, BorderLayout.SOUTH);
 
         board.newGame();
 
